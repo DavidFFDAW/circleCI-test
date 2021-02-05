@@ -7,14 +7,15 @@ jobs:
     steps:
       - checkout
       - run:
-          name: echo
-          command: ls -lh
+          name: echo pwd
+          command: pwd
       - run: 
           name: install npm dependencies
           command: npm install --save
       - run:
-          name: run tests
-          command: ./node_modules/mocha/bin/mocha test/ --reporter-options reportDir=test-results,reportFilename=test-results
+          name: echo ls -lh
+          command: ls -lh
+          #command: ./node_modules/mocha/bin/mocha test/ --reporter-options reportDir=test-results,reportFilename=test-results
       - store_test_results:
           path: test-results
       - store_artifacts:
