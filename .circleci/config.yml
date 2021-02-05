@@ -6,6 +6,9 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
+      - run:
+          name: echo
+          command: docker version
       - run: 
           name: install npm dependencies
           command: npm install --save
